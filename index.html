@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naya Hospital | Care & Cure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NAYA <span>HOSPITAL</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:+911234567890" class="appointment-btn">Emergency Call</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Health is Our Priority</h1>
+            <p>Providing world-class healthcare services at Naya Hospital. Expert doctors, modern technology, and compassionate care.</p>
+            <a href="#contact" class="btn">Book Appointment</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-ambulance"></i>
+                <h3>Emergency 24/7</h3>
+                <p>Round-the-clock emergency medical services with rapid response teams.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-user-md"></i>
+                <h3>Specialist Doctors</h3>
+                <p>Consultations with top-tier specialists across all medical fields.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microscope"></i>
+                <h3>Modern Lab</h3>
+                <p>Advanced diagnostic and laboratory facilities for accurate testing.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Add this section before the Contact section -->
+<section id="diagnostics" class="test-section">
+    <h2 class="section-title">Diagnostic Center</h2>
+    <p class="subtitle">Book X-Ray, MRI, CT Scan & Blood Tests Online</p>
+    
+    <div class="filter-buttons">
+        <button onclick="filterTests('all')">All Tests</button>
+        <button onclick="filterTests('MRI')">MRI</button>
+        <button onclick="filterTests('CT SCAN')">CT Scan</button>
+        <button onclick="filterTests('X-RAY')">X-Ray</button>
+        <button onclick="filterTests('BLOOD TEST')">Blood Tests</button>
+    </div>
+
+    <div id="test-grid" class="test-grid">
+        <!-- Tests will be loaded here by JavaScript -->
+    </div>
+</section>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <h3>Book Appointment</h3>
+        <form id="bookingForm">
+            <input type="hidden" id="selectedTestId">
+            <input type="text" id="patientName" placeholder="Patient Full Name" required>
+            <input type="date" id="appointmentDate" required>
+            <button type="submit" class="btn">Confirm Booking</button>
+            <button type="button" onclick="closeModal()" class="btn-secondary">Cancel</button>
+        </form>
+    </div>
+</div>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <form id="hospitalForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="How can we help you?" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="response"></div>
+            </div>
+            <div class="map-info">
+                <h3>Find Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Naya Hospital, Faridabad, Haryana</p>
+                <!-- Embed Google Map -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d154.2185709122396!2d77.3321937!3d28.3301814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdb007d767d9d%3A0x37ec0a6ce1f8925f!2sNaya%20hospital!5e0!3m2!1sen!2sin!4v1714650000000" 
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+                <a href="https://www.google.com/maps/place/Naya+hospital/@28.3303641,77.332106" target="_blank" class="map-link">Open in Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Naya Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
